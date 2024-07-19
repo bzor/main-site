@@ -1,0 +1,115 @@
+.text-container {
+    width: 100%;
+    max-width: 1280px;
+    min-width: 400px; /* Set the minimum width to 400px */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: var(--text-color); /* Use text color from settings */
+    font-size: 12px; /* Set the font size to 12px to match #bio */
+    font-family: 'IBM Plex Mono', monospace; /* Ensure content block text is in IBM Plex Mono */
+    position: relative;
+    background: none; /* Remove background color */
+}
+
+.content-detail {
+    position: absolute;
+    top: 24px;
+    width: 50%;
+    float: left;
+}
+
+.content-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-right: 10px;
+    background: var(--background-color);
+    z-index: 2;
+    opacity: 0; /* Initial state for GSAP animation */
+}
+
+.content-line {
+    position: absolute;
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--text-color);
+    width: calc(100% - 10px);
+    left: 0;
+    top: 11px;
+    transform-origin: left;
+    transform: scaleX(0); /* Initial state for GSAP animation */
+}
+
+.content-text {
+    position: relative;
+    left: 50%;
+    margin-left: 10px;
+    width: 31%;
+    min-width: 350px;
+    max-width: 600px;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: none;
+}
+
+.content-title {
+    font-family: 'Wavehaus', sans-serif; /* Use custom font for titles */
+    font-size: 46px;
+    line-height: 40px;
+    margin: 0;
+    opacity: 0; /* Initial state for GSAP animation */
+}
+
+.content-platform {
+    font-size: 12px;
+    margin: 10px 0 0 0;
+    opacity: 0; /* Initial state for GSAP animation */
+}
+
+.content-description {
+    opacity: 0; /* Initial state for GSAP animation */
+}
+
+.images-container {
+    width: 100%;
+    max-width: 1280px;
+    min-width: 400px; /* Set the minimum width to 400px */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background: none; /* Remove background color */
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 600px;
+    background-color: var(--background-color); /* Same background color as other elements */
+    margin-top: 10px;
+}
+
+@media (min-width: 800px) {
+    .content-line {
+        max-width: 640px;
+    }
+}
+
+@media (max-width: 800px) {
+    .content-detail,
+    .content-text {
+        position: relative;
+        left: 0;
+        width: 90%;
+        min-width: 90%;
+        max-width: 400px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .content-text {
+        padding: 10px;
+		top: 35px;
+    }
+}

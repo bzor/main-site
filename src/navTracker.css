@@ -1,0 +1,29 @@
+#nav-tracker {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 10px;
+    background-color: var(--background-color);
+}
+
+.nav-section {
+	position: absolute;
+    height: 2px;
+}
+
+.nav-section-inner {
+	position: absolute;
+	width: calc(100% - 3px);
+	height: 100%;
+    background-color: var(--text-color);
+}
+
+.nav-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 4px;
+    background-color: var(--text-color);
+    z-index: 10;
+}
