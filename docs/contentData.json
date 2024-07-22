@@ -1,9 +1,10 @@
 [
     {
         "title": "Syncopated Automata",
-        "description": "Syncopated Automata [Working Title] is an Augmented Reality electronic music album built for Meta Quest 3. It features several synth based compositions accompanied by interactive AR visuals that adapt to your environment. Built with the latest Unity DOTS/ECS tech and ambisonic 3D audio I'm .",
+        "description": "Syncopated Automata [Working Title] is an Augmented Reality electronic music album built for Meta Quest 3. It features several synthesizer based 3D ambisonic compositions accompanied by interactive AR visuals that adapt to your environment. The experience is based on a fusion of ideas I've been developing for years while waiting for technology to mature. Finally with the introduction of Unity DOTS/ECS I feel like the tools are ready, and I'm off to the races.",
         "heroImage": "./src/img/syncopated.jpg",
         "platform": "AR. Meta Quest 3",
+        "status": "In Development",
         "palette": {
             "backgroundColor": "#001014",
             "textColor": "#accbcb",
@@ -15,17 +16,19 @@
         "description": "Introducing the BZOR:T2000 Desktop Artificial Life Containment Unit™ Military grade, use with caution. For dedicated caretakers only.",
         "heroImage": "./src/img/containmentunit.jpg",
         "platform": "AR. Apple Vision Pro",
+        "status": "In Development",
         "palette": {
             "backgroundColor": "#131313",
             "textColor": "#a0a1a6",
-            "highlightColor": "#FF0000"
+            "highlightColor": "#f01d24"
         }
     },
     {
         "title": "Little Wonder",
-        "description": "After a successful proof of concept completed for Magic Leap we are updating the prototype for Apple Vision Pro.",
+        "description": "Along with long time collaborator Nicole McDonald and <a target='_blank' href='https://marrythemoon.com/'><span class='highlight'>&nearr;</span>Marry the Moon</a> we set out to bring an epic narrative experience to AR. After a successful proof of concept completed for Magic Leap we have reformatted the piece for Apple Vision Pro. We are currently seeking funding to develop the full experience.<br/><br/><a target='_blank' class='external-link' href='https://marrythemoon.com/littlewonderfull'><span class='highlight'>&nearr;</span>Visit the Little Wonder Pitch Deck</a>",
         "heroImage": "./src/img/littlewonder.jpg",
         "platform": "AR. Magic Leap → Apple Vision Pro",
+        "status": "Seeking Funding",
         "palette": {
             "backgroundColor": "#a8a49d",
             "textColor": "#201616",
@@ -34,9 +37,10 @@
     },
     {
         "title": "Saṅkhāra",
-        "description": "In a wonderfully fulfilling collaboration with old friend James Paterson (Presstube) we created a portrait of symbolic consiousness in three movements. The structured flowing organization of cellular automata break away to form various 3D scultural formations.",
+        "description": "In a wonderfully fulfilling collaboration with old friend James Paterson (Presstube) we created a portrait of symbolic consiousness in three movements. The structured flowing organization of cellular automata break away to form various 3D scultural formations.<br/><br/><a target='_blank' class='external-link' href='https://www.fxhash.xyz/generative/20748'><span class='highlight'>&nearr;</span>View the work</a>",
         "heroImage": "./src/img/sankhara.jpg",
-        "platform": "fx(hash), WebGL [ThreeJS]",
+        "platform": "fx(hash), WebGL",
+        "status": "Complete",
         "palette": {
             "backgroundColor": "#060708",
             "textColor": "#b6d2d1",
@@ -45,13 +49,14 @@
     },
     {
         "title": "Cyclorbs",
-        "description": "Cyclorbs are 3D interactive sculptures emerging from hypnotic interwoven osillations based on phyllotaxis (the same mathematics governing the seed packing in a sunflower).",
+        "description": "Cyclorbs are 3D interactive sculptures emerging from hypnotic interwoven osillations based on phyllotaxis (the same mathematics governing the seed packing in a sunflower).<br/><br/><a target='_blank' class='external-link' href='https://www.fxhash.xyz/generative/8520'><span class='highlight'>&nearr;</span>View the work</a>",
         "heroImage": "./src/img/cyclorbs.jpg",
-        "platform": "fx(hash), WebGL [ThreeJS]",
+        "platform": "fx(hash), WebGL",
+        "status": "Complete",
         "palette": {
-            "backgroundColor": "#020024",
-            "textColor": "#5bc68e",
-            "highlightColor": "#FF00FF"
+            "backgroundColor": "#0e2a3c",
+            "textColor": "#85bcee",
+            "highlightColor": "#dcb6fa"
         }
     }
 ]
