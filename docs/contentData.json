@@ -1,7 +1,7 @@
 [
     {
         "title": "Syncopated Automata",
-        "description": "Syncopated Automata [Working Title] is an Augmented Reality electronic music album built for Meta Quest 3. It features several synthesizer based 3D ambisonic compositions accompanied by interactive AR visuals that adapt to your environment. The experience is based on a fusion of ideas I've been developing for years while waiting for technology to mature. Finally with the introduction of Unity DOTS/ECS I feel like the tools are ready, and I'm off to the races.",
+        "description": "Syncopated Automata is an Augmented Reality electronic music album built for Meta Quest 3. It features several synthesizer based 3D ambisonic compositions accompanied by interactive AR visuals that adapt to your environment. The experience is based on a fusion of ideas I've been developing for years while waiting for technology to mature. Finally with the combination of Unity DOTS/ECS + Quest 3 the tools and hardware are ready. Off to the races!",
         "heroImage": "./src/img/syncopated.jpg",
         "platform": "AR. Meta Quest 3",
         "status": "In Development",
@@ -13,7 +13,7 @@
     },
     {
         "title": "Containment Unit",
-        "description": "Introducing the BZOR:T2000 Desktop Artificial Life Containment Unit™ Military grade, use with caution. For dedicated caretakers only.",
+        "description": "Introducing the BZOR:T2000 Desktop Artificial Life Containment Unit™ Military grade, use with caution. For dedicated caretakers only.<br/><br/>Configure the genetic code of various digital creatures and let them loose to explore your habitat. Written in RealityKit + Metal I'm testing the limits of the amazing Vision Pro.",
         "heroImage": "./src/img/containmentunit.jpg",
         "platform": "AR. Apple Vision Pro",
         "status": "In Development",
@@ -37,7 +37,7 @@
     },
     {
         "title": "Saṅkhāra",
-        "description": "In a wonderfully fulfilling collaboration with old friend James Paterson (Presstube) we created a portrait of symbolic consiousness in three movements. The structured flowing organization of cellular automata break away to form various 3D scultural formations.<br/><br/><a target='_blank' class='external-link' href='https://www.fxhash.xyz/generative/20748'><span class='highlight'>&nearr;</span>View the work</a>",
+        "description": "In a wonderfully fulfilling collaboration with old friend James Paterson (Presstube) we created a portrait of symbolic consiousness in three movements. The structured flowing organization of cellular automata break away to form various 3D sculptural formations.<br/><br/><a target='_blank' class='external-link' href='https://www.fxhash.xyz/generative/20748'><span class='highlight'>&nearr;</span>View the work</a>",
         "heroImage": "./src/img/sankhara.jpg",
         "platform": "fx(hash), WebGL",
         "status": "Complete",
@@ -49,7 +49,7 @@
     },
     {
         "title": "Cyclorbs",
-        "description": "Cyclorbs are 3D interactive sculptures emerging from hypnotic interwoven osillations based on phyllotaxis (the same mathematics governing the seed packing in a sunflower).<br/><br/><a target='_blank' class='external-link' href='https://www.fxhash.xyz/generative/8520'><span class='highlight'>&nearr;</span>View the work</a>",
+        "description": "Cyclorbs are 3D interactive audio/visual sculptures emerging from hypnotic interwoven osillations based on phyllotaxis (the same mathematics governing the seed packing in a sunflower).<br/><br/><a target='_blank' class='external-link' href='https://www.fxhash.xyz/generative/8520'><span class='highlight'>&nearr;</span>View the work</a>",
         "heroImage": "./src/img/cyclorbs.jpg",
         "platform": "fx(hash), WebGL",
         "status": "Complete",
