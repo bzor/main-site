@@ -3859,14 +3859,14 @@ void main() {
 				float t = inT;
 				float invT = 1.0 - t;
 				
-				uv1 *= mix(1.0 - floor((abs(mixUv.x) + abs(mixUv.y)) * 20.0) * 0.1, 1.0, smoothstep(0.0, 1.0, invT));
+				uv1 *= mix(1.0 - floor((abs(mixUv.x) + abs(mixUv.y)) * (15.0 + t * 10.0)) * 0.1, 1.0, smoothstep(0.0, 1.0, invT));
 				vec2 chromaticDir = normalize(uv1) * 0.75 * t;
 				vec4 mainTexCol = vec4(0);
 				mainTexCol.r = texture2D(mainTex, uv1 + vec2(0.5) + chromaticDir * vec2(redOffset)).r;
 				mainTexCol.g = texture2D(mainTex, uv1 + vec2(0.5) + chromaticDir * vec2(greenOffset)).g;
 				mainTexCol.ba = texture2D(mainTex, uv1 + vec2(0.5) + chromaticDir * vec2(blueOffset)).ba;
 
-				uv2 *= mix(1.0 + floor((abs(mixUv.x) + abs(mixUv.y)) * 10.0) * 0.4, 1.0, sineIn(t));
+				uv2 *= mix(1.0 + floor((abs(mixUv.x) + abs(mixUv.y)) * 20.0) * 0.5, 1.0, sineIn(t));
 				chromaticDir = normalize(uv2) * 0.75 * invT;
 				vec4 inTexCol = vec4(0);
 				inTexCol.r = texture2D(inTex, uv2 + vec2(0.5) + chromaticDir * vec2(redOffset)).r;
