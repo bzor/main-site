@@ -3866,7 +3866,7 @@ void main() {
 				mainTexCol.g = texture2D(mainTex, uv1 + vec2(0.5) + chromaticDir * vec2(greenOffset)).g;
 				mainTexCol.ba = texture2D(mainTex, uv1 + vec2(0.5) + chromaticDir * vec2(blueOffset)).ba;
 
-				uv2 *= mix(1.0 + floor((abs(mixUv.x) + abs(mixUv.y)) * 20.0) * 0.5, 1.0, sineInOut(t));
+				uv2 *= mix(1.0 + floor((abs(mixUv.x) + abs(mixUv.y)) * 10.0) * 0.4, 1.0, sineIn(t));
 				chromaticDir = normalize(uv2) * 0.75 * invT;
 				vec4 inTexCol = vec4(0);
 				inTexCol.r = texture2D(inTex, uv2 + vec2(0.5) + chromaticDir * vec2(redOffset)).r;
