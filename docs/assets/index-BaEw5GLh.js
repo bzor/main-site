@@ -3831,12 +3831,25 @@ void main() {
 			const float angle1 = PI *0.25;
 			const float angle2 = -PI *0.75;
 
+			float sineIn(float t) {
+				return sin((t - 1.0) * PI * 0.5) + 1.0;
+			}
+			float sineOut(float t) {
+				return sin(t * PI * 0.5);
+			}
+			float sineInOut(float t) {
+				return -0.5 * (cos(PI * t) - 1.0);
+			}
+			float quarticIn(float t) {
+				return pow(t, 4.0);
+			}
+
 			void main()	{
 				float aspect = 16.0 / 9.0;
 
 				float redOffset   =  -0.006;
-				float greenOffset =  0.009;
-				float blueOffset  = -0.006;
+				float greenOffset =   0.009;
+				float blueOffset  =   0.006;
 
 				vec2 uv1 = vUv - vec2(0.5);
 				vec2 uv2 = uv1;
@@ -3853,7 +3866,7 @@ void main() {
 				mainTexCol.g = texture2D(mainTex, uv1 + vec2(0.5) + chromaticDir * vec2(greenOffset)).g;
 				mainTexCol.ba = texture2D(mainTex, uv1 + vec2(0.5) + chromaticDir * vec2(blueOffset)).ba;
 
-				uv2 *= mix(1.0 + floor((abs(mixUv.x) + abs(mixUv.y)) * 20.0) * 0.5, 1.0, smoothstep(0.0, 1.0, t));
+				uv2 *= mix(1.0 + floor((abs(mixUv.x) + abs(mixUv.y)) * 20.0) * 0.5, 1.0, sineInOut(t));
 				chromaticDir = normalize(uv2) * 0.75 * invT;
 				vec4 inTexCol = vec4(0);
 				inTexCol.r = texture2D(inTex, uv2 + vec2(0.5) + chromaticDir * vec2(redOffset)).r;
@@ -3863,7 +3876,7 @@ void main() {
 				//mainTexCol = texture2D(mainTex, uv1 + vec2(0.5));
 				//inTexCol = texture2D(inTex, uv2 + vec2(0.5));
 
-				float mixT = step(fract((abs(mixUv.x) + abs(-mixUv.y)) * 1.0), smoothstep(0.0, 1.0, t));
+				float mixT = step(fract((abs(mixUv.x) + abs(-mixUv.y)) * 1.0), quarticIn(t));
 				vec4 f = mix(mainTexCol, inTexCol, mixT);
 
 				gl_FragColor = f;
