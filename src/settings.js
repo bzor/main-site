@@ -1,9 +1,8 @@
 // settings.js
 export const settings = {
-    backgroundColor: '#141526', // Light gray
-    textColor: '#FFFFFF',       // Black
-    scrollbarThumbColor: '#888',
-    scrollbarThumbHoverColor: '#555'
+    backgroundColor: '#2E2D3E',
+    textColor: '#C8CCCF',
+    highlightColor: '#a7393f',
 };
 
 

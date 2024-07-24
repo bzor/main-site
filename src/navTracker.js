@@ -1,12 +1,16 @@
+
+const navTracker = document.getElementById('nav-tracker');
+const scrollIndicator = document.querySelector('.scroll-indicator');
+let scrollIndicatorHidden = false;
+
 export function initNavTracker() {
     const sections = document.querySelectorAll('#logo-block, #bio, .text-container');
-    const navTracker = document.getElementById('nav-tracker');
     const progressIndicator = document.querySelector('.nav-progress');
 
     const totalHeight = document.body.getBoundingClientRect().height - window.innerHeight;
     let sectionWidths = [];
 
-
+	gsap.set(navTracker, { top: -10 } );
 
     // Calculate widths for each section
 	let prevTop = 0;
@@ -39,19 +43,16 @@ export function initNavTracker() {
 
     // Update the position of the progress indicator
     function updateProgress() {
-		
 		progressIndicator.style.left = `calc(${st.progress * 100}% - 1px)`;
 
-		/*
-        let cumulativeWidth = 0;
-        for (let i = 0; i < sectionWidths.length; i++) {
-            cumulativeWidth += sectionWidths[i];
-            if (progress <= cumulativeWidth) {
-                progressIndicator.style.left = `calc(${cumulativeWidth}% - 1px)`;
-                break;
-            }
-        }
-			*/
+		if(st.progress < 0.003 && scrollIndicatorHidden){
+			scrollIndicatorHidden = false;
+			gsap.to(scrollIndicator, {duration: 0.4, autoAlpha: 1, ease: "power3.inOut"});
+		}
+		if(st.progress >= 0.003 && !scrollIndicatorHidden){
+			scrollIndicatorHidden = true;
+			gsap.to(scrollIndicator, {duration: 0.4, autoAlpha: 0, ease: "power3.inOut"});
+		}	
     }
 
     // ScrollTrigger to update the progress indicator
@@ -61,4 +62,9 @@ export function initNavTracker() {
         end: 'bottom bottom',
         onUpdate: updateProgress
     });
+}
+
+export function showNavTracker() {
+	gsap.to(navTracker, {duration: 0.2, autoAlpha: 1, ease: "power1.out"});
+	gsap.to(navTracker, {duration: 0.6, top: 0, ease: "power3.inOut"});
 }
