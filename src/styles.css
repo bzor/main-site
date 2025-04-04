@@ -51,6 +51,10 @@ a:hover {
     color: var(--highlight-color);
 }
 
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
 .highlight {
     color: var(--highlight-color);
 }
@@ -159,7 +163,7 @@ canvas {
 .bio-loading-center {
     width: 100%;
     max-width: 1280px;
-    min-width: 400px; /* Set the minimum width to 400px */
+    min-width: 600px;
 	min-height: 85vh;
     box-sizing: border-box;
     color: #C8CCCF;
@@ -177,7 +181,7 @@ canvas {
 #bio {
     width: 100%;
     max-width: 1280px;
-    min-width: 400px; /* Set the minimum width to 400px */
+    min-width: 400px;
 	min-height: 85vh;
     box-sizing: border-box;
     color: #C8CCCF;
@@ -213,7 +217,7 @@ canvas {
     position: absolute;
     left: 0;
     top: 0;
-    padding-right: 10px;
+    padding-right: 2px;
     z-index: 2;
 }
 
@@ -245,7 +249,6 @@ canvas {
 	padding-bottom: 30px;
     width: 31%;
     min-width: 350px;
-    max-width: 600px;
     font-size: 14px;
     line-height: 20px;
     text-transform: none;
@@ -274,7 +277,7 @@ canvas {
 
 @media (min-width: 800px) {
     .bio-line {
-        max-width: 640px;        
+        /* max-width: 640px;         */
     }
 }
 
@@ -283,13 +286,18 @@ canvas {
     .bio-text {
         position: relative;
         left: 0;
-        width: 90%;
+        width: 100%;
         min-width: 90%;
-        max-width: 400px;
+        max-width: 600px;
         margin-left: 0;
         margin-top: -30px;
 		top: 0;
     }
+
+	.bio-text-content{
+		padding-left: 5px;
+		padding-right: 20px;
+	}
 
 	.bio-title {
 		margin-top: 10px;
@@ -374,6 +382,7 @@ canvas {
 	line-height: 11px;
 	color: var(--text-color);
 	background-color: var(--background-color);
+	opacity: 0;
 }
 
 .scroll-arrow {

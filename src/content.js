@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import { updateImageProgress, setInitialBG, updateColors, setHeroTextures } from './threejs-background.js';
 
-
 export function fetchContentData() {
     return fetch('./contentData.json')
         .then(response => {
@@ -49,12 +48,18 @@ export function createContentBlocks(contentData) {
     const content = document.getElementById('smooth-content');
 
     contentData.forEach((block, index) => {
+
+		block.textActive = 0;
+
         const textContainer = document.createElement('div');
         textContainer.className = 'text-container';
         textContainer.id = `text-container-${index}`;
 
 		const leftDetail = document.createElement('div');
         leftDetail.className = 'content-detail-left';
+
+		const leftTopDetail = document.createElement('div');
+        leftTopDetail.className = 'content-detail-left-top';
 
         const detail = document.createElement('div');
         detail.className = 'content-detail';
@@ -78,7 +83,11 @@ export function createContentBlocks(contentData) {
 
         const description = document.createElement('p');
         description.className = 'content-description';
-        description.innerHTML = block.description;
+        description.innerHTML = "";
+
+		const contentTag = document.createElement('p');
+        contentTag.className = 'content-tag';
+        contentTag.innerHTML = block.tag;
 
         const platform = document.createElement('p');
         platform.className = 'content-platform';
@@ -88,12 +97,24 @@ export function createContentBlocks(contentData) {
         status.className = 'content-status';
         status.innerHTML = `STATUS: ${block.status}`;
 
+		const textDetail = document.createElement('div');
+        textDetail.className = 'content-text-detail';
+		const textDetailLeft = document.createElement('div');
+        textDetailLeft.className = 'content-text-detail-left';
+		const textDetailRight = document.createElement('div');
+        textDetailRight.className = 'content-text-detail-right';
+
         text.appendChild(title);
         text.appendChild(platform);
         text.appendChild(status);
         text.appendChild(description);
+        text.appendChild(contentTag);
+        text.appendChild(textDetail);
+        text.appendChild(textDetailLeft);
+        text.appendChild(textDetailRight);
 
         textContainer.appendChild(leftDetail);
+        textContainer.appendChild(leftTopDetail);
         textContainer.appendChild(detail);
         textContainer.appendChild(text);
 
@@ -101,16 +122,23 @@ export function createContentBlocks(contentData) {
         imagesContainer.className = 'images-container';
         imagesContainer.id = `images-container-${index}`;
 
-        // Create empty divs for each image
-        if (block.heroImage) {
-            const imageDiv = document.createElement('div');
-            imageDiv.className = 'image-placeholder';
-            imageDiv.dataset.imageName = block.heroImage.split('/').pop(); // Store image name in dataset
-            imagesContainer.appendChild(imageDiv);
-        }
+		const imageDiv = document.createElement('div');
+		imageDiv.className = 'image-placeholder';
+		imageDiv.dataset.imageName = block.heroImage.split('/').pop();
+		imagesContainer.appendChild(imageDiv);
+
+		const textShowDiv = document.createElement('div');
+		textShowDiv.className = 'text-show';
+        textShowDiv.id = `text-show-${index}`;
+
+		const endSpacerDiv = document.createElement('div');
+		endSpacerDiv.className = 'end-spacer';
+        endSpacerDiv.id = `end-spacer-${index}`;
 
         content.appendChild(textContainer);
         content.appendChild(imagesContainer);
+        content.appendChild(textShowDiv);
+        content.appendChild(endSpacerDiv);
     });
 }
 
@@ -129,6 +157,9 @@ export function createScrollTriggers(contentData) {
         const status = textContainer.querySelector('.content-status');
         const description = textContainer.querySelector('.content-description');
         const images = document.querySelectorAll(`#images-container-${index} .image-placeholder`);
+        const textShow = document.querySelectorAll(`#text-show-${index}`);
+        const textDetail = textContainer.querySelectorAll(`.content-text-detail`);
+        const endSpacer = document.querySelectorAll(`#end-spacer-${index}`);
 
         // Reveal animation ScrollTrigger
         gsap.timeline({
@@ -148,24 +179,24 @@ export function createScrollTriggers(contentData) {
             }
         });
 
-        // Pinning animation ScrollTrigger
+        // Pin Sections to top
         gsap.timeline({
             scrollTrigger: {
                 trigger: textContainer,
                 start: 'top 80px',
-                end: `+=100%`,
+                end: `+=175%`,
                 pin: true,
 				pinSpacing: false,
-                markers: false // Remove or comment this out in production
+                markers: false
             }
         });
 
-        // Image progress tracking ScrollTrigger
+        // Track section progress
         gsap.timeline({
             scrollTrigger: {
                 trigger: textContainer,
                 start: 'top bottom',
-                end: 'top 80px',
+                end: 'top 100px',
                 scrub: true,
 				snap: {
 					snapTo: 1,
@@ -188,9 +219,68 @@ export function createScrollTriggers(contentData) {
                     });
                     updateImageProgress(imageProgressArray);
                 },
-                markers: false // Remove or comment this out in production
+                markers: false
             }
         })
 
+		gsap.timeline({
+			scrollTrigger: {
+				trigger: textShow,
+                start: 'top 40%',
+                end: 'top 80px',
+				toggleActions: "play none none reverse"
+			}
+		}).to(block, {
+			duration: 0.5,
+			ease: "none",
+			textActive: 1,
+			onUpdate: () => {
+				const rndChars = ["+", "-"];
+				const t1 = THREE.MathUtils.smoothstep(block.textActive, 0.0, 0.8);
+				const t2 = THREE.MathUtils.smoothstep(block.textActive, 0.4, 1.0);
+				const l1 = Math.floor(t1 * block.description.length);
+				const l2 = Math.floor(t2 * block.description.length);
+				let str = "";
+				str = block.description.substr(0, Math.floor(block.description.length * t2));
+				for( let i = l2; i < l1; i++){
+					str += (block.description.substr(i, 1) == " ") ? " " : rndChars[i % rndChars.length];
+				}
+				description.innerHTML = str;
+			}
+		}).to(description, {
+			duration: 0.5,
+			ease: "sine.inOut",
+			paddingBottom: 10
+		}, 0);
+
+		gsap.timeline({
+			scrollTrigger: {
+				trigger: textShow,
+                start: 'top bottom',
+                end: 'top 40%',
+				scrub: true
+			}
+		}).to(textDetail, {
+			ease: "none",
+			width: "100%",
+		});
+
+		if(index != contentData.length - 1){
+			gsap.timeline({
+				scrollTrigger: {
+					trigger: textShow,
+					start: 'top 35%',
+					end: 'bottom top',
+					scrub: true,
+					onUpdate: (self) => {
+						console.log(self.progress);
+					}
+				}
+			}).to(textDetail, {
+				ease: "none",
+				left: "100%",
+				width: "0%"
+			});
+		}
     });
 }

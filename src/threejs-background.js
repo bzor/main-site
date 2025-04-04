@@ -224,6 +224,9 @@ export function updateImageProgress(progressArray) {
 
 	if (curActiveImage == null){
 		backgroundPlane.material.uniforms.mainTex.value = null;
+		activeBgCol.set(settings.backgroundColor);
+		activeTextCol.set(settings.textColor);
+		activeHighlightCol.set(settings.highlightColor);
 	}
 
 	if(curActiveImage == null && curTransitionImage == null){

@@ -22,8 +22,8 @@
     position: absolute;
     top: 0px;
     left: 0;
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     background-color: var(--highlight-color);
     border: solid 2px var(--background-color);
     z-index: 10;

@@ -20,12 +20,22 @@ function applyGlobalSettings() {
     root.style.setProperty('--highlight-color', settings.highlightColor);
 }
 
+
+
 // Apply settings on load
 applyGlobalSettings();
 
 function start(){
 	ScrollTrigger.refresh();
-	// Initialize the navigation tracker after content blocks are created
+	//gsap.ticker.add(onTick);
+	//gsap.to(scrollData, {duration: 1, speed: 4, ease: "sine.inOut"});
+}
+
+let scrollData = {speed: 0};
+function onTick(){
+	let newScrollPos = window.scrollY + scrollData.speed;	
+	// Scroll the window to the new position
+	window.scrollTo(0, newScrollPos);
 }
 
 // Fetch content data and create content blocks
@@ -44,6 +54,7 @@ fetchContentData()
 			gsap.to(".bio-bottom-detail", {duration: 1.2, scaleX: 1, delay: 1.5, ease: "power4.out", onComplete: start});
 			gsap.to(".bio-loading", {duration: 0.2, autoAlpha: 0, delay: 0.8, ease: "power1.in"});
 			gsap.to(".bio-greeting", {duration: 0.2, autoAlpha: 1, delay: 1, ease: "power1.out"});			
+			gsap.to(".scroll-indicator", {duration: 0.6, autoAlpha: 1, delay: 1.7, ease: "power1.out"});
         });
     })
     .catch(error => console.error('Error fetching content data:', error));
@@ -58,3 +69,4 @@ ScrollSmoother.create({
     smoothTouch: true,
     ignoreMobileResize: true
 });
+
