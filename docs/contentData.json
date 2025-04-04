@@ -1,5 +1,18 @@
 [
     {
+        "title": "Containment Unit",
+        "description": "Introducing the BZOR:T2000 Desktop Artificial Life Containment Unit™ Military grade, use with caution. For dedicated caretakers only.<br/><br/>Configure the genetic code of various digital creatures and let them loose to explore your habitat. Created with Unity+Polyspatial I'm bringing together complex shader dev, sci-fi UI design, generative aLife concepts, and futuristic sound design for an interactive experience like no other on the Apple Vision Pro.",
+        "heroImage": "./src/img/containmentunit.jpg",
+        "platform": "AR. Apple Vision Pro",
+        "status": "In Development",
+		"tag": "<span class='content-sub'>Stay tuned for updates</span>",
+        "palette": {
+            "backgroundColor": "#131313",
+            "textColor": "#a0a1a6",
+            "highlightColor": "#f01d24"
+        }
+    },
+    {
         "title": "Syncopated Automata",
         "description": "Syncopated Automata is an Augmented Reality electronic music album built for Meta Quest 3. It features several synthesizer based 3D ambisonic compositions accompanied by interactive AR visuals that adapt to your environment. The experience is based on a fusion of ideas I've been developing for years while waiting for technology to mature. Finally with the combination of Unity DOTS/ECS + Quest 3 the tools and hardware are ready. Off to the races!",
         "heroImage": "./src/img/syncopated.jpg",
@@ -10,19 +23,6 @@
             "backgroundColor": "#001014",
             "textColor": "#accbcb",
             "highlightColor": "#005d8f"
-        }
-    },
-    {
-        "title": "Containment Unit",
-        "description": "Introducing the BZOR:T2000 Desktop Artificial Life Containment Unit™ Military grade, use with caution. For dedicated caretakers only.<br/><br/>Configure the genetic code of various digital creatures and let them loose to explore your habitat. Written in RealityKit + Metal I'm testing the limits of the amazing Vision Pro.",
-        "heroImage": "./src/img/containmentunit.jpg",
-        "platform": "AR. Apple Vision Pro",
-        "status": "In Development",
-		"tag": "<span class='content-sub'>Stay tuned for updates</span>",
-        "palette": {
-            "backgroundColor": "#131313",
-            "textColor": "#a0a1a6",
-            "highlightColor": "#f01d24"
         }
     },
     {
