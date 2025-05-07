@@ -22,14 +22,14 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --text-color: #1a1a1a;
+            --text-color: #000000;
             --accent-color: #2E2D3E;
             --border-color: #dddddd;
             --max-width: 1200px;
             --section-spacing: 20px;
-            --font-weight-normal: 200;
-            --font-weight-medium: 300;
-            --font-weight-bold: 400;
+            --font-weight-normal: 300;
+            --font-weight-medium: 400;
+            --font-weight-bold: 500;
         }
 
         body {
@@ -96,9 +96,14 @@
             border-bottom: none;
         }
 
+		#description h3 {
+			color: #333
+		}
+
         .section h2 {
             font-size: 1.5em;
             margin: 0 0 20px;
+            color: #333;
             font-weight: var(--font-weight-medium);
         }
 
@@ -112,6 +117,13 @@
             font-size: 0.8em;
             margin: 0 0 0px;
             color: #666;
+            font-weight: var(--font-weight-normal);
+        }
+
+		#credits .fact-item h3 {
+            font-size: 0.85em;
+            margin: 0 0 0px;
+            color: #000;
             font-weight: var(--font-weight-normal);
         }
 
@@ -484,14 +496,13 @@
                 </div>
             </section>
 
-            <section class="section" id="team">
-                <h2>Team</h2>
+            <section class="section" id="credits">
+                <h2>Credits</h2>
                 <div class="factsheet">
                     <div class="fact-item">
-                        <h3>K.C. Austin</h3>
-                        <p>Creative Director & Developer</p>
+                        <h3>Concept | Design | Modeling | Rigging | Animation | Texturing | Sound Design | UI Design | Shader Dev | Code</h3>
+                        <p>by K.C. Austin</p>
                     </div>
-                    <!-- Add more team members as needed -->
                 </div>
             </section>
 
@@ -523,13 +534,6 @@
                                 </svg>
                             </a>
                         </div>
-                    </div>
-                    <div class="fact-item">
-                        <h3>Social</h3>
-                        <p class="social-links-text">
-                            <a href="https://x.com/bzor" target="_blank" class="social-link">X.com: @bzor</a>
-                            <a href="https://www.instagram.com/bzorsystems/" target="_blank" class="social-link">Instagram: @bzorsystems</a>
-                        </p>
                     </div>
                 </div>
             </section>
