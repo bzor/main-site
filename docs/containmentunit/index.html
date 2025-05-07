@@ -26,7 +26,7 @@
             --accent-color: #2E2D3E;
             --border-color: #dddddd;
             --max-width: 1200px;
-            --section-spacing: 60px;
+            --section-spacing: 20px;
             --font-weight-normal: 200;
             --font-weight-medium: 300;
             --font-weight-bold: 400;
@@ -57,7 +57,7 @@
             right: 20px;
             color: var(--text-color);
             text-decoration: none;
-            font-size: 12px;
+            font-size: 10px;
             z-index: 100;
             font-weight: var(--font-weight-normal);
         }
@@ -97,7 +97,7 @@
         }
 
         .section h2 {
-            font-size: 1.8em;
+            font-size: 1.5em;
             margin: 0 0 20px;
             font-weight: var(--font-weight-medium);
         }
@@ -109,8 +109,8 @@
         }
 
         .fact-item h3 {
-            font-size: 1em;
-            margin: 0 0 10px;
+            font-size: 0.8em;
+            margin: 0 0 0px;
             color: #666;
             font-weight: var(--font-weight-normal);
         }
@@ -172,6 +172,54 @@
             max-height: 95vh;
             object-fit: contain;
             border-radius: 4px;
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 15px;
+            opacity: 0.6;
+            transition: all 0.2s ease;
+            z-index: 1001;
+            border-radius: 4px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-nav:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-prev {
+            left: 20px;
+        }
+
+        .modal-next {
+            right: 20px;
+        }
+
+        .modal-counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 14px;
+            opacity: 0.8;
         }
 
         .close-modal {
@@ -255,6 +303,12 @@
             margin: 0;
             border-radius: 0;
             box-shadow: none;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        .header-image:hover {
+            opacity: 0.9;
         }
 
         .content-wrapper {
@@ -343,8 +397,7 @@
     
     <div class="container">
         <header class="press-kit-header">
-            <img src="../assets/containment-unit-header-hpH5KPmg.jpg" alt="Containment Unit Header Image" class="header-image">
-            <p>Press Kit</p>
+            <img src="../assets/containment-unit-header-hpH5KPmg.jpg" alt="Containment Unit Header Image" class="header-image" onclick="document.getElementById('videos').scrollIntoView({behavior: 'smooth'})">
         </header>
 
         <div class="content-wrapper">
@@ -393,6 +446,12 @@
                 </ul>
             </section>
 
+            <section class="section" id="dev-notes">
+                <h2>From the Developer</h2>
+                <p>Containment Unit represents my vision of what spatial computing can be: a blend of art, technology, and playful super-responsive interaction. As someone who has been experimenting with artificial life for over 20 years, the prospect of bringing my creations into the physical world is a dream come true. With Apple Vision Pro's environment lighting, world sensing, hand tracking and beautiful high resolution displays, we can finally create experiences where artistic creations feel truly present in our world.</p>
+                <p>This project draws inspiration from my love of biology, generative art, modular synthesis, and sci-fi. I wanted to create something that feels both futuristic and organic - where technology enables creativity and wonder rather than just utility. The app is an ongoing experiment, the initial version is tight in scope but highly polished, with a solid foundation I can add new designs to over time.</p>
+            </section>
+
             <section class="section" id="media">
                 <h2>Screenshots</h2>
                 <div class="media-grid">
@@ -409,7 +468,7 @@
                         <img src="../assets/bzor-containment-unit-screenshot-04-BfgibSR-.jpg" alt="Containment Unit Screenshot 4" onclick="openModal(this.src)">
                     </div>
                 </div>
-                <a href="https://github.com/bzor/main-site/archive/refs/tags/v1.0.0.zip" class="download-btn" download>Download Press Kit (ZIP)</a>
+                <a href="https://github.com/bzor/main-site/releases/download/bzor_containmentUnit_PressKit/bzor_ContainmentUnit_VisionPro_PressKit.zip" class="download-btn" download>Download Press Kit (ZIP)</a>
             </section>
 
             <section class="section" id="videos">
@@ -446,25 +505,21 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
-                                <span>Email</span>
                             </a>
                             <a href="https://www.linkedin.com/in/kcaustin/" target="_blank" class="social-link" title="LinkedIn">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                                 </svg>
-                                <span>LinkedIn</span>
                             </a>
                             <a href="https://x.com/bzor" target="_blank" class="social-link" title="X (Twitter)">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                                 </svg>
-                                <span>X.com</span>
                             </a>
                             <a href="https://www.instagram.com/bzorsystems/" target="_blank" class="social-link" title="Instagram">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                                 </svg>
-                                <span>Instagram</span>
                             </a>
                         </div>
                     </div>
@@ -485,10 +540,17 @@
     <!-- Add Modal HTML -->
     <div class="fullscreen-modal" onclick="closeModal()">
         <button class="close-modal">×</button>
+        <button class="modal-nav modal-prev" onclick="event.stopPropagation(); navigateModal(-1)">&lt;</button>
+        <button class="modal-nav modal-next" onclick="event.stopPropagation(); navigateModal(1)">&gt;</button>
         <img src="" alt="Fullscreen Image">
+        <div class="modal-counter"></div>
     </div>
 
     <script>
+        // Store all screenshot images
+        const screenshots = Array.from(document.querySelectorAll('.media-item img'));
+        let currentImageIndex = 0;
+
         function copyToClipboard() {
             navigator.clipboard.writeText('https://bzor.com/containmentunit').then(() => {
                 const feedback = document.querySelector('.copy-feedback');
@@ -502,9 +564,11 @@
         // Modal functionality
         const modal = document.querySelector('.fullscreen-modal');
         const modalImg = modal.querySelector('img');
+        const modalCounter = modal.querySelector('.modal-counter');
 
         function openModal(imgSrc) {
-            modalImg.src = imgSrc;
+            currentImageIndex = screenshots.findIndex(img => img.src === imgSrc);
+            updateModalImage();
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
         }
@@ -514,11 +578,34 @@
             document.body.style.overflow = ''; // Restore scrolling
         }
 
-        // Close modal with Escape key
+        function updateModalImage() {
+            const currentImage = screenshots[currentImageIndex];
+            modalImg.src = currentImage.src;
+            modalImg.alt = currentImage.alt;
+            modalCounter.textContent = `${currentImageIndex + 1} / ${screenshots.length}`;
+        }
+
+        function navigateModal(direction) {
+            currentImageIndex = (currentImageIndex + direction + screenshots.length) % screenshots.length;
+            updateModalImage();
+        }
+
+        // Close modal with Escape key and navigate with arrow keys
         document.addEventListener('keydown', function(e) {
+            if (!modal.classList.contains('active')) return;
+            
             if (e.key === 'Escape') {
                 closeModal();
+            } else if (e.key === 'ArrowLeft') {
+                navigateModal(-1);
+            } else if (e.key === 'ArrowRight') {
+                navigateModal(1);
             }
+        });
+
+        // Prevent clicks on modal content from closing the modal
+        modalImg.addEventListener('click', function(e) {
+            e.stopPropagation();
         });
     </script>
 </body>
