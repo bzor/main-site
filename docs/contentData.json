@@ -1,11 +1,11 @@
 [
     {
         "title": "Containment Unit",
-        "description": "Introducing the BZOR:T2000 Desktop Artificial Life Containment Unit™ Military grade, use with caution. For dedicated caretakers only.<br/><br/>Configure the genetic code of various digital creatures and let them loose to explore your habitat. Created with Unity+Polyspatial I'm bringing together complex shader dev, sci-fi UI design, generative aLife concepts, and futuristic sound design for an interactive experience like no other on the Apple Vision Pro.",
+        "description": "Introducing the BZOR Artificial Life Containment Unit™. For dedicated caretakers only.<br/><br/>Configure the genetic code of digital creatures and let them loose to explore your habitat. Created with Unity+Polyspatial I'm bringing together complex shader dev, sci-fi UI design, generative aLife concepts, and futuristic sound design for an interactive experience like no other on the Apple Vision Pro.",
         "heroImage": "./src/img/containmentunit.jpg",
         "platform": "AR. Apple Vision Pro",
-        "status": "In Development",
-		"tag": "<span class='content-sub'>Stay tuned for updates</span>",
+        "status": "Ongoing Experiment",
+		"tag": "<a target='_top' class='external-link' href='https://bzor.com/containmentunit/'><span class='highlight'>&nearr;</span>View the project</a>",
         "palette": {
             "backgroundColor": "#131313",
             "textColor": "#a0a1a6",
