@@ -449,7 +449,15 @@
                     </div>
                     <div class="fact-item">
                         <h3>App Store Link</h3>
-                        <p>Coming Soon</p>
+                        <p><a href="https://apps.apple.com/us/app/containment-unit/id6503202614" target="_blank" rel="noopener" style="color: #2E2D3E; text-decoration: underline;">View on App Store</a></p>
+                        <div class="copy-wrapper" style="margin-top:4px;">
+                            <span style="font-size:12px;word-break:break-all;"><a href="https://apps.apple.com/us/app/containment-unit/id6503202614" target="_blank" rel="noopener" style="color:#2E2D3E;text-decoration:underline;">https://apps.apple.com/us/app/containment-unit/id6503202614</a></span>
+                            <button class="copy-button" onclick="copyAppStoreUrl()" title="Copy App Store URL to clipboard">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -570,6 +578,19 @@
                 feedback.classList.add('visible');
                 setTimeout(() => {
                     feedback.classList.remove('visible');
+                }, 2000);
+            });
+        }
+
+        function copyAppStoreUrl() {
+            const url = 'https://apps.apple.com/us/app/containment-unit/id6503202614';
+            navigator.clipboard.writeText(url).then(() => {
+                const feedback = document.querySelector('.copy-feedback');
+                feedback.textContent = 'App Store URL copied!';
+                feedback.classList.add('visible');
+                setTimeout(() => {
+                    feedback.classList.remove('visible');
+                    feedback.textContent = 'URL copied to clipboard!';
                 }, 2000);
             });
         }
