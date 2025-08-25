@@ -1,5 +1,18 @@
 [
     {
+        "title": "Vertex Corrections",
+        "description": "Vertex Corrections is a procedural animation system residing on the fxHash generative art platform. This project is one of the first experimental curated releases of the new Open Form, a format allowing collectors to mint then evolve artwork into branching lineages.<br/><br/>This is the initial release under the art coin $BZOR, a new home for my realtime audio/visual experiments. A meditation on the looping, turbulent but structured nature of spacetime.",
+        "heroImage": "./src/img/vertex-corrections.jpg",
+        "platform": "fx(hash) Open Form, WebGL",
+        "status": "Released",
+		"tag": "<a target='_top' class='external-link' href='https://www.fxhash.xyz/project/vertex-corrections'><span class='highlight'>&nearr;</span>View the release</a>",
+        "palette": {
+            "backgroundColor": "#000000",
+            "textColor": "#edece3",
+            "highlightColor": "#69dffb"
+        }
+    },
+    {
         "title": "Containment Unit",
         "description": "Introducing the BZOR Artificial Life Containment Unit™. For dedicated caretakers only.<br/><br/>Configure the genetic code of digital creatures and let them loose to explore your habitat. Created with Unity+Polyspatial I'm bringing together complex shader dev, sci-fi UI design, generative aLife concepts, and futuristic sound design for an interactive experience like no other on the Apple Vision Pro.",
         "heroImage": "./src/img/containmentunit.jpg",
