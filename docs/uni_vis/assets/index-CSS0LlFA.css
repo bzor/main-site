@@ -1,1 +1,0 @@
-:root{color-scheme:light dark}html,body{height:100%}body{margin:0;display:grid;place-items:center;background:#000}canvas{display:block;width:min(90vmin,900px);height:min(90vmin,900px)}#toolbar{position:fixed;top:8px;left:8px;display:flex;gap:8px;z-index:10}#toolbar .mode-btn{cursor:pointer;font-family:monospace;font-size:12px;border-radius:0;background-color:#333;border:none}
