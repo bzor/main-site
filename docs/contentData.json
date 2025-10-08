@@ -1,7 +1,7 @@
 [
     {
         "title": "Vertex Corrections",
-        "description": "Vertex Corrections is a procedural animation system residing on the fxHash generative art platform. This project is one of the first experimental curated releases of the new Open Form, a format allowing collectors to mint then evolve artwork into branching lineages.<br/><br/>This is the initial release under the art coin $BZOR, a new home for my realtime audio/visual experiments. A meditation on the looping, turbulent but structured nature of spacetime.",
+        "description": "Vertex Corrections is a procedural animation system residing on the fxHash generative art platform. This project is one of the first experimental curated releases of the new Open Form, a format allowing collectors to mint then evolve artwork into branching lineages.<br/><br/>This is also the initial release under the art coin $BZOR, a new home for my realtime audio/visual experiments. A meditation on the looping, turbulent but structured nature of spacetime.",
         "heroImage": "./src/img/vertex-corrections.jpg",
         "platform": "fx(hash) Open Form, WebGL",
         "status": "Released",
